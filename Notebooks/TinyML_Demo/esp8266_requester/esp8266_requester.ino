@@ -7,10 +7,10 @@ extern "C" {
 }
 
 // Fill in your WiFi router SSID and password
-const char* ssid = "CenturyLink7623";
-const char* password = "95b4chx9umx8v6";
+const char* ssid = "<SSID>";
+const char* password = "<Password>";
 
-const char* host = "192.168.0.24";
+const char* host = "<Victim IP>";
 const uint16_t port = 80;
 
 /* create display(Adr, SDA-pin, SCL-pin) */
