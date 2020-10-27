@@ -37,16 +37,20 @@ A Red LED flash = abnormal, attack detected
 
 ## The Requester
 
-The requester machine is comprised of two parts;
+The requester machine is comprised of four parts;
 1. Wemos D1 mini microcontroller
 2. SSD1306 .96" OLED Module
+3. Two 10k Ohm resisters
+4. Two tactile push buttons
 
-The requester works in a cycle of where it will make a request to the victim every 60 seconds.  The first request will put the victim device's LED light to 25%,then it will make 8 requests to set the light to 50%, and finally it will make a request for 75% light.  The cycle will repeat with the whole cycle taking about 10 minutes to complete.
+The requester works in a cycle of where it will make a request to the victim when ever a button is pushed up or down a level.  For example if the victim is at 0% and the up button is pushed it will go to 25%, and if the down button is pushed next it will go back down to 0%.
 
 ## The Attacker
 
-The attacker machine is comprised of two parts;
+The attacker machine is comprised of four parts;
 1. Wemos D1 mini microcontroller
 2. SSD1306 .96" OLED Module
+3. One 10k Ohm resister
+4. One tactile push button
 
-The attacker will wait ten minutes before launching an attack.  Once the attack starts the attacker will make 90 requests to the victim setting the light to 100%.  Once the attack is done the attacker will wait 5 to 10 minues before attacking again.
+The attacker will launch an attack once the button is pushed.  Once the attack starts the attacker will make 90 requests to the victim setting the light to 100% with about on request done every 1-2 seconds.
