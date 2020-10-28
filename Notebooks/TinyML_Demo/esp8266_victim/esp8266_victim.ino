@@ -267,7 +267,7 @@ void setup(void)
   display.drawString(0, 0, "TinyML-");
   display.drawString(0, 16, "Demo");
   display.setFont(ArialMT_Plain_10);
-  display.drawString(0, 40, "Version 1.0");
+  display.drawString(0, 40, "Version 1.1");
   display.drawString(0, 50, "Scada Victim");
   display.display();
   delay(2500);
