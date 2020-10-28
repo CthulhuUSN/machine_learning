@@ -1,4 +1,4 @@
-# TinyML Demo Using ESP8266 Microcontrollers Version 1.0
+# TinyML Demo Using ESP8266 Microcontrollers Version 1.1
 
 In this demo we will be attempting to create a model which will be converted to a Tensorflow lite model to run on a ESP8622 D1 Mini microcontroller.  The model will try to determine if the victim microcontroller is being attacked by being flooded with requests to put its LED light to 100%. The goal of this notebook is to learn more about using TinyML models and see how this can eventually be applied to a SCADA like enviroment.
 
